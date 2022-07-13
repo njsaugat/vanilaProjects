@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family:'Lato', 'sans-serif';
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* justify-content: center; */
+    height: 100vh;
+    /* overflow: hidden; */
+    margin: 0;
+    /* background-image: linear-gradient(45deg, rgb(251, 119, 25), rgb(255, 209, 124)); */
+    background-image: linear-gradient(45deg, rgb(121, 121, 254), rgb(180, 129, 199));
+}
+
+h1{
+    letter-spacing: 2px;
+    color: rgb(184, 244, 244);
+}
+
+.container{
+    width: 850px;
+    max-width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: ; */
+    align-items: center;
+}
+.left-buttons{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    /* align-self: flex-end; */
+}
+/* .left-btn{
+    width:200px;
+    text-align: center;
+} */
+
+.right-people-wealths{
+    width: 70%;
+    height: 100%;
+}
+.people,.people1,.total{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin:20px;
+    max-width: 90%;
+    font-size: 1.25rem;
+}
+.total{
+    /* background-color: white; */
+    box-shadow: 0px 2px 5px black;
+    height: 30px;
+    border-radius: 5px;
+    /* width: 100%; */
+    /* display: none; */
+    background-image: linear-gradient(45deg, rebeccapurple,rgb(211, 6, 211));
+    color: white;
+    padding: 0px 10px;
+
+}
+
+.total.inactive{
+    display: none;
+}
+
+
+.left-btn{
+    width: 160px;
+    height: 3.5rem;
+    /* background-color: rebeccapurple; */
+    background-image: linear-gradient(45deg, rebeccapurple,rgb(211, 6, 211));
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin:5px;
+    font: inherit;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rebeccapurple;
+    font-weight: bold;
+
+}
+.left-btn:hover{
+    background-image: linear-gradient(45deg, rgba(102, 51, 153, 0.864),rgba(211, 6, 211, 0.775)); 
+}
+.left-btn:active{
+    /* transform: scale(0.98); */
+    transform: scale(0.98);
+    /* transition: transform 0.3s ease-in; */
+
+}
+
+.left-btn:focus{
+    outline: none;
+
+}
+
+.person{
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
