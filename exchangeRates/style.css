@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family:'Muli', 'sans-serif';
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-color: aliceblue;
+    /* background-color: black; */
+}
+.container{
+    max-width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.instruction{
+    text-align: center;
+}
+.image{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-gear{
+    background-image: linear-gradient(45deg, rgb(36, 182, 133), aquamarine);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    font-size: 8rem;
+    /* color:rgb(36, 182, 133); */
+    /* color: linear-gradient(45deg, aqua, aquamarine); */
+
+}
+
+.fa-dollar-sign{
+    position: absolute;
+    top:50%;
+    font-size: 2rem;
+    transform: translateY(-50%);
+    background-image: linear-gradient(45deg, #8d8827, #511e2c);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    -moz-text-fill-color: transparent;
+    /* color:rebeccapurple; */
+
+}
+
+.container h1{
+    text-align: center;
+    color:rgb(36, 182, 133);
+}
+
+.rate-calculator,.mid{
+    width: 90%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.rate-calculator select{
+    height:30px;
+    width: 65px;
+    padding: 0px 5px;
+    font: inherit;
+    font-weight: bold;
+    border: none;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.481);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.rate-calculator select:focus{
+    outline: none;
+}
+
+.right input{
+    width: 140px;
+    height: 30px;
+    border: 1px solid grey;
+    padding: 5px;
+    border: none;
+    box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.481);
+    border-radius: 5px;
+    font-size: 1.1rem;
+    padding:0px 5px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+
+}
+
+/* input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  height: 100%;
+} */
+
+.right input:focus{
+    outline: none;
+}
+
+.btn{
+    width: 65px;
+    height: 30px;
+    background-color: rgb(36, 182, 133);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font: inherit;
+    box-shadow: 0px 2px 5px rgba(128, 128, 128, 0.481);
+    border-radius: 5px;
+
+}
+.btn:focus{
+    outline: none;
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
+.btn:hover{
+    background-color: rgba(36, 182, 133, 0.806);
+}
+.mid small{
+    font-size: 1rem;
+    color: rgb(36, 182, 133);
+}
