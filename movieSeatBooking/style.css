@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Ubuntu', 'sans-serif';
+    background-color: rgb(30, 29, 36);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    color:white
+    
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 700px;
+    max-width: 100%;
+}
+
+.container>div{
+    margin-bottom: 20px;
+}
+
+.movie-pick select{
+    width: 250px;
+    
+
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 20px;
+    -moz-padding-end: 20px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: rgba(187, 187, 187, 0.687); /* Fallback color if gradients are not supported */
+    background-image: linear-gradient(to bottom, #E5E5E5, #F4F4F4); /* Standard syntax; must be last */
+    background-position: center right;
+    background-repeat: no-repeat;
+    border: 1px solid #AAA;
+    border-radius: 5px;
+    box-shadow: 0px 1px 3px rgba(255, 255, 255, 0.566);
+    color: #555;
+    font-size: inherit;
+    margin: 0;
+    overflow: hidden;
+    padding: 2px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.movie-pick select option{
+    color: black;
+}
+
+.movie-pick select option:focus{
+    outline: none;
+}
+
+
+.movie-pick select:focus{
+    outline: none;
+}
+
+.legend{
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    font-size: 1.2rem;
+}
+
+.seat{
+    width: 25px;
+    height: 20px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.586);
+    cursor: pointer;
+    margin: 5px 3px;
+    transition: background-color 0.5s ease;
+}
+
+.seat1{
+    width: 25px;
+    height: 20px;
+    border-top-left-radius: 50%;
+    border-top-right-radius: 50%;
+    background-color: rgba(128, 128, 128, 0.586);
+    
+}
+
+
+
+.selected{
+    background-color: aqua;
+    box-shadow: 0px 2px 20px cyan;
+
+}
+
+.selected1{
+    background-color: aqua;
+    box-shadow: 0px 2px 20px cyan;
+
+}
+.occupied{
+    background-color: white;
+    box-shadow: 0;
+    cursor:default;
+}
+.occupied1{
+    background-color: white;
+    box-shadow: 0;
+    cursor:default;
+}
+
+.screen{
+    width: 100%;
+    height:100px;
+    background: azure;
+    transform: perspective(10px) rotateX(179.5deg);
+    box-shadow: 0px -3px 15px white;
+
+
+    /* alternative approach: */
+    /* border-top: 100px solid azure;
+    border-left: 15px solid rgb(30, 29, 36);
+    border-right: 15px solid rgb(30, 29, 36);*/
+}
+
+.hall{
+    display: flex;
+    flex-wrap: wrap;
+    width: 300px;
+}
+
+.final-booking span{
+    color: aqua;
+}
+
+.btn{
+    width: 50%;
+    height: 50px;
+    font:inherit;
+    border-radius: 10px;
+    background-image: linear-gradient(45deg, aqua, aquamarine);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-image: linear-gradient(45deg, rgba(0, 255, 255, 0.697), rgba(127, 255, 212, 0.632));
+}
+.btn:active{
+    transform: scale(0.98);
+}
+.btn:focus{
+    outline: none;
+}
