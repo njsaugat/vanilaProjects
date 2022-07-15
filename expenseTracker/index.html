@@ -19,45 +19,41 @@
 
     <h1>Expense Tracker</h1>
     <div class="balance">
-      <small>Your Balance</small>
-      <span>$200.00</span>
+      <small>Your   Balance</small>
+      <span class="amount">$0.00</span>
     </div>
     <div class="income-expense">
       <div class="income">
         <span>Income</span>
-        <span>$300.00</span>
+        <span class="income-amt amt">$0.00</span>
       </div>
+      <div class="line"></div>
       <div class="expense">
         <span>Expense</span>
-        <span>$100.00</span>
+        <span class="expense-amt amt">$0.00</span>
       </div>
     </div>
     <div class="history">
-      History
-      <hr>
-      <div class="items">
-        <div class="item">
-          <button></button>
-          
-        </div>
-        
-      </div>
-
+      <!-- <span style="display: none;">Tracked:</span>
+      <div class="tracked-line"></div> -->
+      <div class="items"></div>
     </div>
     <div class="new-transaction">
       <small>Add new transaction</small>
-      <hr>
-      <div class="text">Text</div>
-      <div class="item-name">
+      <div class="tracked-line"></div>
+      <div class="item-add item-name">
+        <label for="item">Item</label>
         <input type="text" placeholder="Enter Text">
+      </div>
+      <div class="item-add item-price">
+        <label for="item">Amount</label>
+        <span>(negative- expense, positive- income)</span>
+        <input type="text" placeholder="Enter Amount">
       </div>
 
-      <div class="item-price">
-        <input type="text" placeholder="Enter Text">
-      </div>
-      <div class="add-transaction">
-        <button class="btn">Add transaction</button>
-      </div>
+      <button class="btn add-tranaction">Add transaction</button>
+      <!-- <div class="add-transaction">
+      </div> -->
     </div>
     
 
