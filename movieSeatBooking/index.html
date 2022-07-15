@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css">
+    <title>Movie Seats Booking</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="movie-pick">
+        <label for="Movie">Pick a movie:</label>
+        <select>
+          <option value="Thor:Love and Thunder ($10)" selected>Thor:Love and Thunder ($10)</option>
+          <option value="Spiderman: No way home! ($12)">Spiderman: No way home! ($12) </option>
+          <option value="Minions: The Rise of Gru ($9)">Minions: The Rise of Gru ($9)</option>
+          <option value="The Batman ($15)">The Batman ($15)</option>
+        </select>
+      </div>
+      <div class="legend">
+        <div class="empty1 seat1"></div>
+        <span>Available</span>
+        <div class="selected1 seat1"></div>
+        <span>Selected</span>
+        <div class="occupied1 seat1"></div>
+        <span>Occupied</span>
+      </div>
+      <div class="screen"></div>
+      <div class="hall">
+        
+      </div>
+      <div class="final-booking">
+        You have selected <span class="total-seats">0</span> seats for a price of $<span class="total-price">0</span>
+      </div>
+      <button class="btn">Confirm</button>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
