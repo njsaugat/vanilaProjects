@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family:'Lato', 'sans-serif';
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    height: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    /* background-color: rgb(49, 20, 20); */
+    /* background-image: linear-gradient(45deg, rgba(0, 0, 0, 0.864),grey); */
+    background:linear-gradient(45deg, rgba(0, 0, 0, 0.864),grey);
+    background-attachment: fixed;     
+    color: white;
+}
+
+h1{
+    letter-spacing: 1.5px;
+    text-align: center;
+}
+h2{
+    letter-spacing: 2px;
+}
+.search-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(250%);
+    transition: transform 0.4s ease;
+
+}
+.search-content.active{
+    transform: translateY(0%);
+}
+.search{
+    display: flex;
+    width: 370px;
+    /* flex-direction: column; */
+    justify-content: space-around;
+    align-items: center;
+}
+
+.input-search{
+    width: 85%;
+    display: flex;
+    align-items: center;
+}
+
+.input-search input{
+    width: 95%;
+    height: 40px;
+    padding: 0 10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+    font: inherit;
+    /* margin-right: 10px; */
+    /* box-shadow: 0px 2px 5px white; */
+}
+
+.input-search input:focus{
+    outline: none;
+}
+/* .input-search form{
+    width: 10%;
+    height: 50px;
+} */
+
+form{
+    display: flex;
+    width: 100%;
+}
+.input-search  form button {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(219, 255, 255);
+    /* height: 40px; */
+    color: black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+    border: none;
+}
+.input-search  form button:focus{
+    outline: none;
+}
+
+.random-meal{
+    width: 10%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    background-color: rgb(219, 255, 255);
+    color:black;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* flex-wrap: wrap; */
+    width: 50%;
+}
+
+@media(max-width:800px){
+    .content{
+        width: 80%;
+    }
+    body{
+        padding: 20px;
+    }
+}
+
+.image{
+    width: 220px;
+    height: 220px;
+    /* background-image: url('https://images.pexels.com/photos/7363676/pexels-photo-7363676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    /* background-size:200px; */
+    border:5px solid white;
+}   
+
+.search-results{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.search-images{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-image{
+    width: 170px;
+    height: 170px;
+    cursor: pointer;
+    border:3px solid white;   
+    margin: 10px;
+    position: relative;
+}
+
+.hover-find-meal{
+    width: 0;
+    height: 0;
+    display: none;
+}
+/* .search-image.active:hover::after{ */
+.hover-find-meal.active{
+    
+    /* content: "Steak"; */
+    padding: 10px;
+    margin: 0;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(14, 8, 8, 0.566);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    word-wrap: break-word;
+
+}
+
+
+.highlights{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 100px;
+    border: 3px dashed rgb(253, 217, 41);
+    margin: 20px 0px;
+}
+
+.cooking-description{
+    line-height: 27px;
+    letter-spacing: 0.8px;
+}
+
+.ingredients{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 50px;
+    justify-content: center;
+    /* justify-content: space-between; */
+}
+.ingredients span{
+    margin:5px 10px;
+    background-color: azure;
+    color: black;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 10px;
+    border-radius: 50px;
+}
+
+::-webkit-scrollbar {
+    /* scrollbar-width: thin; */
+    width:0.5rem;  
+ }
+ ::-webkit-scrollbar-track {
+    /* scrollbar-width: thin; */
+    background:white;
+ }
+ ::-webkit-scrollbar-thumb {
+    /* scrollbar-width: thin; */
+    background: grey;
+ }
+ 
