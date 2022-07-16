@@ -12,10 +12,43 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Memory Cards</title>
   </head>
   <body>
-    <h1>Project Starter</h1>
+    <h1>Memory Cards</h1>
+    <button class="add-new-cart btn"><i class="fa-solid fa-plus"></i> Add New Card</button>
+    <div class="container">
+    </div>
+    <form action="" class="form-control">
+      <div class="form-title">
+        <h2>Add New Card</h2>
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="field">
+        <label for="question">Question</label>
+        <textarea name="" id="" cols="50" rows="4"></textarea>
+      </div>
+      <div class="field">
+        <label for="Answer">Answer</label>
+        <textarea name="" id="" cols="50" rows="4"></textarea>
+      </div>
+      <button type="submit" class="btn add-card">+Add Card</button>
+    </form>
+    <div class="memory-cards">
+      <div class="memory-card">
+        <span class="flip"><i class="fa-solid fa-rotate"></i>Flip</span>
+        <span class="question-card">What is PHP?</span>
+        <span class="answer-card">A programming Language</span>
+      </div>
+      <div class="buttons-control">
+        <span> <i class="fa-solid fa-arrow-left"></i> </span>
+        <span> 1/1 </span>
+        <span> <i class="fa-solid fa-arrow-right"></i> </span>
+      </div>
+    </div>
+    <div class="clear-trash">
+      <button class="trash btn"><i class="fa-solid fa-trash"></i> Clear Cards</button>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
