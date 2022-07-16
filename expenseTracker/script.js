@@ -15,11 +15,11 @@ let index=0;
 if(JSON.parse(localStorage.getItem('expenseTrackerItems'))){
     const items=JSON.parse(localStorage.getItem('expenseTrackerItems'))
     items.forEach(item=>{
-        createRecord(item[0],item[1],index)
+        createRecord(item.name,item.price,item.id)
         index++
         
-        updateIncomeExpenseCreation(+item[1])
-        updateBalance(+item[1])
+        updateIncomeExpenseCreation(+item.price)
+        updateBalance(+item.price)
     })
 }
 
@@ -28,7 +28,8 @@ if(JSON.parse(localStorage.getItem('expenseTrackerItems'))){
 
 addTransaction.addEventListener('click',()=>{
     if(itemName.value && itemPrice.value && checkNumber(itemPrice.value) ){
-        createRecord(itemName.value,itemPrice.value,index)
+        const id=randomId()
+        createRecord(itemName.value,itemPrice.value,id)
         index++
         
         updateIncomeExpenseCreation(+itemPrice.value)
@@ -89,42 +90,83 @@ function updateBalance(currBalance){
 
 
 
-function createRecord(name,price,index){
+// function createRecord(name,price,index){
+//     if(!items.innerHTML){
+//         items.innerHTML+=`      <span>Tracked:</span>
+//         <div class="tracked-line"></div>
+//   `
+//     }
+//     const overallItem=document.createElement('div')
+//     overallItem.classList.add('overall')
+//     overallItem.innerHTML+=` 
+//         <button><i class="fa-solid fa-xmark"></i></button>
+//         <div class="item">
+//           <span class="item-name">${name}</span>
+//           <span class="item-amt">${price}</span>
+//           <!-- <span class="color-representation"></span> -->
+//         </div>`
+
+//     itemDeletion(overallItem,price,index)
+//     changeBorder(overallItem,price)
+//     items.appendChild(overallItem)
+    
+//     expenseTrackerItems.push([name,price])
+//     updateLS()
+// }
+function createRecord(name,price,id){
     if(!items.innerHTML){
         items.innerHTML+=`      <span>Tracked:</span>
         <div class="tracked-line"></div>
   `
     }
+    
     const overallItem=document.createElement('div')
     overallItem.classList.add('overall')
     overallItem.innerHTML+=` 
-        <button><i class="fa-solid fa-xmark"></i></button>
+        <button onclick="itemDeletion1(${id})"><i class="fa-solid fa-xmark"></i></button>
         <div class="item">
           <span class="item-name">${name}</span>
           <span class="item-amt">${price}</span>
           <!-- <span class="color-representation"></span> -->
         </div>`
 
-    itemDeletion(overallItem,price,index)
+    // itemDeletion(overallItem,price,index)
     changeBorder(overallItem,price)
     items.appendChild(overallItem)
     
-    expenseTrackerItems.push([name,price])
+    expenseTrackerItems.push({id,name,price})
     updateLS()
 }
 
-function itemDeletion(overallItem,price,index){
-    overallItem.childNodes[1].addEventListener('click',()=>{
-        console.log(index)
-        expenseTrackerItems.splice(index, 1)
-        updateLS()
-        decreaseIndex()
-        overallItem.remove()
-        updateBalance((+price)*(-1))
-        updateIncomeExpenseDeletion((+price))
-    })
-
+function randomId(){
+    return Math.floor(Math.random()*1000000)
 }
+
+function itemDeletion1(id){
+    const overallItems=document.body.querySelectorAll('.overall')
+    expenseTrackerItems=expenseTrackerItems.filter((item,index)=>{
+        if(item.id===id){
+            updateBalance((+item.price)*(-1))
+            updateIncomeExpenseDeletion((+item.price))
+            overallItems[index].remove()
+        }
+        return item.id!==id;
+    })
+    updateLS()
+}
+
+// function itemDeletion(overallItem,price,index){
+//     overallItem.childNodes[1].addEventListener('click',()=>{
+//         console.log(index)
+//         expenseTrackerItems.splice(index, 1)
+//         updateLS()
+//         decreaseIndex()
+//         overallItem.remove()
+//         updateBalance((+price)*(-1))
+//         updateIncomeExpenseDeletion((+price))
+//     })
+
+// }
 
 
 
