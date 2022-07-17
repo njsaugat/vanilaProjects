@@ -16,29 +16,31 @@
   </head>
   <body>
     <h1>Memory Cards</h1>
-    <button class="add-new-cart btn"><i class="fa-solid fa-plus"></i> Add New Card</button>
+    <button class="add-new-card btn" ><i class="fa-solid fa-plus"></i> Add New Card</button>
     <div class="container">
     </div>
     <form action="" class="form-control">
+      <div class="form-background">
       <div class="form-title">
         <h2>Add New Card</h2>
-        <i class="fa-solid fa-xmark"></i>
+        <button class="btn cross"><i class="fa-solid fa-xmark"></i></button>
       </div>
       <div class="field">
         <label for="question">Question</label>
-        <textarea name="" id="" cols="50" rows="4"></textarea>
+        <textarea name="" id="" cols="50" rows="4" class="question"></textarea>
       </div>
       <div class="field">
         <label for="Answer">Answer</label>
-        <textarea name="" id="" cols="50" rows="4"></textarea>
+        <textarea name="" id="" cols="50" rows="4" class="answer"></textarea>
       </div>
       <button type="submit" class="btn add-card">+Add Card</button>
+    </div>
     </form>
     <div class="memory-cards">
       <div class="memory-card">
-        <span class="flip"><i class="fa-solid fa-rotate"></i>Flip</span>
+        <!-- <span class="flip"><i class="fa-solid fa-rotate"></i>Flip</span>
         <span class="question-card">What is PHP?</span>
-        <span class="answer-card">A programming Language</span>
+        <span class="answer-card">A programming Language</span> -->
       </div>
       <div class="buttons-control">
         <span> <i class="fa-solid fa-arrow-left"></i> </span>
