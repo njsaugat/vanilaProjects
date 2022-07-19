@@ -12,10 +12,20 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Lyrics App</title>
   </head>
   <body>
-    <h1>Project Starter</h1>
+    <div class="container">
+      <h1>Search Lyrics</h1>
+      <form class="form-control">
+        <input type="text" placeholder="Enter artist or songs here..">
+        <button type="submit" class="btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+    </div>
+    <div class="songs">
+      <i class="fas fa-spinner fa-pulse"></i>  
+      <div class="more"></div>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
