@@ -17,8 +17,8 @@ formControl.addEventListener('submit',(e)=>{
 async function getLyrics(artistOrTitle){
     // blurrLoad()
     // spin.classList.add('active')
-    // const data=await fetch(`${API_URL}/suggest/${artistOrTitle}`,{accept:'application/JSON'})
-    const data=await fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search&q=${artistOrTitle}`,{accept:'application/JSON'})
+    const data=await fetch(`${API_URL}/suggest/${artistOrTitle}`,{accept:'application/JSON'})
+    // const data=await fetch(`https://cors-anywhere.herokuapp.com/https://api.deezer.com/search&q=${artistOrTitle}`,{accept:'application/JSON'})
     const results=await data.json()
     createLyrics(results)
 }
@@ -39,7 +39,7 @@ function createLyrics(results){
             </div>
             <div class="get-lyrics">
             <!-- <a href="#">Get Lyrics</a> -->
-            <button class="btn find-lyrics" onclick="generateLyrics( '${name}','${title}' )"> Get Lyrics </button>
+            <button class="btn find-lyrics" onclick="generateLyrics( '${name}','${title}' ,'${matchSong.link}' )"> Get Lyrics </button>
             </div>
         </div>
         `
@@ -48,7 +48,6 @@ function createLyrics(results){
     more.classList.add('more')
     songs.appendChild(more)
     // console.log(nextURL)
-    console.log(results)
     if(results.prev || results.next){
         more.innerHTML=`
             ${results.prev ? `<button class="btn find-lyrics"  onclick=getMoreSongs('${results.prev}')>Prev</button>`:''}
@@ -68,25 +67,23 @@ async function getMoreSongs(url){
     createLyrics(results)
 }
 
-function callMe(a){
-    console.log(a)
-}
 
-async function generateLyrics(artist,title){
+
+async function generateLyrics(artist,title,link){
     // blurLoad()
     songs.innerHTML='<i class="fas fa-spinner fa-pulse active"></i>'
-    // spin.classList.add('active')
     const data=await fetch(`${API_URL}/v1/${artist}/${title}`,{accept:'application/JSON'})
     const results=await data.json()
-    // console.log(results)
-    addLyrics(results.lyrics)
+    addLyrics(results.lyrics,title,link)
 
 }
 
-function addLyrics(lyrics){
+function addLyrics(lyrics,title,link){
     // removeBlurLoad
     spin.classList.remove('active')
-    songs.innerHTML=`<pre>${lyrics}</pre>`
+    songs.innerHTML=`
+    --<a href="${link}" target="_blank">${title}</a>--
+    <pre>${lyrics}</pre>`
 
     // console.log(lyrics)
 }
