@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="style.css">
+    <title>Music Player</title>
+  </head>
+  <body>
+    <h1>Music Player</h1>
+    <div class="container">
+      <div class="popup ">
+        <small class="title-song">Ukelele</small>
+        <div class="contain">
+          <input type="range" id="volume" min="0" max="2" value="0"  class="slider">
+          <small class="audio-length"></small>
+        </div>
+      </div>
+      <div class="music">
+      <div class="image"></div>
+      <!-- <audio controls loop  preload="none loop  preload="none" src="audio/bensound-ukulele.mp3" default> -->
+        <div class="right">
+
+        <i class="fa-solid fa-backward"></i>
+          <button data-playing="false" role="switch" aria-checked="false" class="play-pause">
+            <i class="fa-solid fa-play pause-play "></i>
+            <i class="fa-solid fa-pause pause-play"></i>
+          </button>
+          <i class="fa-solid fa-forward"></i>
+        </div>
+      </div>
+
+      <audio  src="audio/bensound-ukulele.mp3" >
+      </audio>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
