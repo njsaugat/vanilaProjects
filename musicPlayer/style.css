@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family:'Lato', 'sans-serif';
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-image: linear-gradient(180deg,plum,white);
+    background-attachment: fixed;
+    letter-spacing: 1px;
+}
+
+h1{
+    margin: 0;
+}
+
+.container{
+    position: relative;
+    width: clamp(300px,400px, 500px);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 4.5rem;
+}
+
+
+.popup{
+    width: clamp(250px,350px,400px);
+    height:4rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: rgba(240, 248, 255, 0.662);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    transform: translateY(50%);
+    transition: transform 0.5s ease;
+}
+
+
+.popup.active{
+    transform: translatey(-100%);
+    /* z-index: 2; */
+}
+.music{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width:clamp(300px,400px,500px);
+    height:6rem;
+    /* border: 1px solid green; */
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0px 2px 20px rgb(249, 129, 249);
+    position: relative;
+}
+
+.right{
+    position: absolute;
+    left: 8rem;
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.image{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background-image:url('https://cdn.bensound.com/image/cover/ukulele.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: -25%;
+    left: 5%;
+
+    
+}
+
+.image.active{
+    transform-origin: center;
+    /* transform: rotate(); */
+    animation: rotating 4s infinite linear;
+    /* animation-play-state: paused; */
+
+}
+
+@keyframes rotating{
+    0%{
+        transform: rotate(0deg);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.music button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    height: 1rem;
+    font-size: 3rem;
+    transform: translateY(-100%);
+}
+.music button:focus{
+    outline: none;
+}
+.music i{
+    cursor: pointer;
+    color:rgba(128, 128, 128, 0.649);
+}
+.pause-play{
+    display: none;
+}
+
+.pause-play.active{
+    display: block;
+}
+
+.title-song{
+    position: absolute;
+    top:20%;
+    /* left:10%; */
+}
+
+.contain{
+    width: 70%;
+    position: absolute;
+    bottom: 0.5rem;
+    left: 20%;
+    top:40%;
+
+}
+.audio-length{
+    position: absolute;
+    right: -14%;
+    top:20%;
+
+}
+.slider{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height:5px;
+    border-radius: 1rem;
+    background-color: #d3d3d3;
+    outline: none;
+    opacity:0.7;
+    -webkit-transition: .2s; 
+    transition: opacity .2s;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: height 0.3s ease;
+}
+
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+    height:7px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 10px; /* Set a specific slider handle width */
+    height: 10px; /* Slider handle height */
+    border-radius: 50%;
+    background: red; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+
+  
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+
+  
