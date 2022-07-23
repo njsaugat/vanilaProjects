@@ -138,14 +138,36 @@ h1{
     /* left:10%; */
 }
 
-.contain{
+.progress-container {
+    background: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px 0;
+    height: 4px;
     width: 70%;
-    position: absolute;
-    bottom: 0.5rem;
-    left: 20%;
-    top:40%;
+  }
+  
+  .progress {
+    background-color: #fe8daa;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
 
-}
+
+  .image::after {
+    content: '';
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, 50%);
+  }
+
 .audio-length{
     position: absolute;
     right: -14%;
@@ -153,6 +175,7 @@ h1{
 
 }
 .slider{
+    
     -webkit-appearance: none;
     appearance: none;
     width: 100%;
