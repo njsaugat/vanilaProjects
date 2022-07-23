@@ -9,7 +9,7 @@ const audioLength=document.body.querySelector('.audio-length')
 const previous=document.body.querySelector('.fa-backward')
 const next=document.body.querySelector('.fa-forwar')
 
-const songs=['hey','summer','ukulele']
+
 
 audioElement.onloadedmetadata=function(){
     audioLength.innerText=`${Math.floor((audioElement.duration)/60)}:${Math.floor((audioElement.duration)%60)}`
