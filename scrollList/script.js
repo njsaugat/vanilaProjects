@@ -1,10 +1,12 @@
 const people = document.body.querySelector(".people");
+const check = document.body.querySelector(".btn");
 
 const TOTAL_PEOPLE = 10;
 
 let strValue='';
 
 var alreadyDone=[]
+let dragStartIndex;
 const richPeople = [
   "Elon Musk",
   "Jeff Bezos",
@@ -48,7 +50,7 @@ for (let i = 0; i < TOTAL_PEOPLE; i++) {
   people.innerHTML += `
     <div class="person">
     <div class="rank">${i+1}</div>
-    <div class="right-drag">
+    <div class="right-drag" draggable="true">
       <div class="name">${randomValueFromArray(richPeople)}</div>
       <div class="dashes">
         <i class="fa fa-minus"></i>
@@ -57,38 +59,84 @@ for (let i = 0; i < TOTAL_PEOPLE; i++) {
     </div>
     </div>
     `;
+
+    addEventListeners()
+}
+
+function addEventListeners(){
+  const draggables=document.body.querySelectorAll('.right-drag ')
+  const draggableItems=document.body.querySelectorAll('.person')
+  draggables.forEach(draggable=>{
+      draggable.addEventListener('dragstart',dragStart)
+  })
+
+  draggableItems.forEach(draggableItem=>{
+    draggableItem.addEventListener('dragend',dragEnd)
+    draggableItem.addEventListener('dragover',dragOver)
+    draggableItem.addEventListener('dragenter',dragEnter)
+    draggableItem.addEventListener('dragleave',dragLeave)
+    draggableItem.addEventListener('drop',dragDrop)
+
+  })
 }
 
 
-const rightDrags=document.body.querySelectorAll('.right-drag .dashes')
+function dragStart(){  
+    // dragStartIndex=this.closest('.person').getAttribute('rank')
+    // console.log(this.closest('.rank'))
+    dragStartIndex=(+this.previousElementSibling.innerText)-1
+    // console.log(dragStartIndex)
+  }
+function dragEnter(){
+  this.classList.add('over')
+}
 
-rightDrags.forEach(rightDrag=>{
-    rightDrag.addEventListener('dragstart',()=>{
-        rightDrag.parentElement.classList.add('drag')
-    })
+function dragEnd(){
+  // ele.classList.remove('drag')
+}
+function dragLeave(){
+  this.classList.remove('over')
+}
+function dragOver(e){
+  e.preventDefault()
+}
+
+
+function dragDrop(){
+  const dragEndIndex=(+this.querySelector('.rank').innerText) -1
+  // console.log(dragEndIndex)
+  // console.log(this.querySelector('.rank'))
+  swapItems(dragStartIndex,dragEndIndex)
+  this.classList.remove('over')
+}
+
+
+function swapItems(fromIndex,toIndex){
+  const draggableItems=document.body.querySelectorAll('.person')
+  const itemOne=draggableItems[fromIndex].querySelector('.right-drag')
+  const itemTwo=draggableItems[toIndex].querySelector('.right-drag')
+
+  draggableItems[fromIndex].appendChild(itemTwo)
+  draggableItems[toIndex].appendChild(itemOne)
+}
+
+check.addEventListener('click',()=>{
+  const draggableItems=document.body.querySelectorAll('.right-drag .name')
+  console.log(draggableItems)
+  // draggableItems.forEach((item,index)=>{
+  //   const rank=(+item.querySelector('.rank').innerText)-1
+  //   if(rank===)
+  // })
+  richPeople.forEach((rich,index)=>{
+    const person=draggableItems[index].innerText
+    if(rich.trim().toLowerCase() === person.trim().toLowerCase()){
+      // removeAllClass('correct')
+      draggableItems[index].classList.remove('incorrect')
+      draggableItems[index].classList.add('correct')
+    }else{
+      // removeAllClass('incorrect')      
+      draggableItems[index].classList.add('incorrect')      
+    }
+   
+  })
 })
-
-
-  
-
-
-// // Approach that only works when we have less than 10 elements in array
-// // because we are using string, after 9 the digits repeat 
-// function getRandomIndex(){
-//     return Math.floor(Math.random()*TOTAL_PEOPLE)
-// }
-
-// function getUniqueElement(){
-//     console.log(strValue)
-//     let randomValue=getRandomIndex().toString()
-//     console.log(strValue)
-//     if(!strValue.includes(randomValue)){
-//         strValue+=`${randomValue}`
-//         return +randomValue
-//     }else{
-//         // randomValue=getRandomIndex()
-//         getUniqueElement()
-//     }
-
-    
-// }
