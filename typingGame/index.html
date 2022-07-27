@@ -12,10 +12,30 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Speed Typer</title>
   </head>
   <body>
-    <h1>Project Starter</h1>
+    <div class="container">
+      <span class="title">👩‍💻Speed Typer👩‍💻</span>
+      <div class="top">
+        <span>Time left: <span class="time"></span></span>
+        <span>Score: <span class="score">0</span></span>
+      </div>
+      <small>Type the following</small>
+      <div class="word "></div>
+      <div class="input">
+        <input type="text" placeholder="Type the word here">
+      </div>
+    </div>
+    <button class="btn setting"><i class="fa-solid fa-gear"></i></button>
+    <div class="settings">
+      <span>Difficulty </span>
+      <select name="play-mode" id="" class="play-mode">
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+      </select>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
