@@ -1,15 +1,201 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
 
 *{
     box-sizing: border-box;
 }
-body{
-    font-family:'Roboto', 'sans-serif';
-    background-color: white;
+
+/* for flexbox */
+
+body,.container,.top,.settings,.title{
     display: flex;
     align-items: center;
     justify-content: center;
+
+}
+body{
+    font-family:'Muli', 'sans-serif';
+    background-color: white;
     height: 100vh;
     overflow: hidden;
     margin: 0;
+    flex-direction: column;
+    background-image: linear-gradient(45deg,rgb(77, 77, 77),steelblue);
+    color: white;
+    position: relative;
+}
+.container{
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 1rem;
+    width: clamp(350px,35em,95vw);
+    height: 37vh;
+    /* border: 1px solid green; */
+    background-image: linear-gradient(135deg,rgb(132, 132, 245),rgb(70, 140, 198));
+    border-radius: 0.5rem;
+    /* background-color: rgb(20, 46, 67); */
+
+}
+.title{
+    width: 100%;
+    padding: 0.6rem 0px;
+    font-weight: bolder;
+    font-size: 2rem;
+    /* height: 100px; */
+    /* background-color: rebeccapurple; */
+    background-image: linear-gradient(135deg,rgb(74, 38, 110),rgb(161, 106, 161));
+    border-radius: 0.5rem;
+    letter-spacing: 1px;
+
+}
+.top{
+    margin-top: 0.7rem;
+    justify-content: space-between;
+    width: 100%;
+
+}
+.container small{
+    font-size: 1rem;
+    letter-spacing: 0.8px;
+}
+
+.word{
+    margin: 1rem;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    font-weight: bolder;
+}
+
+.word.animated{
+    /* color:rgb(249, 127, 127); */
+    transform-origin: top;
+    animation: moveAround 1s  linear;
+
+}
+
+
+@keyframes moveAround{
+    0%,50%,100%{
+        transform: translateX(0%) rotate(0deg);
+    }
+    25%{
+        transform: translateX(-10%) rotate(10deg);
+    }
+    75%{
+        transform: translateX(10%)  rotate(-10deg);
+        
+    }
+    
+}
+
+.input input{
+    margin-top: 1rem;
+    font: inherit;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    border: none;
+    /* letter-spacing: 0.9px; */
+    /* width: 70%; */
+    text-align: center;
+}
+.input input{
+    outline: none;
+}
+
+.btn{
+    width: 3rem;
+    height: 3rem;
+    font:inherit;
+    border-radius: 10px;
+    background-image: linear-gradient(45deg, aqua, aquamarine);
+    font-size: 1.3rem;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border: none;
+}
+.btn:hover{
+    background-image: linear-gradient(45deg, rgba(0, 255, 255, 0.697), rgba(127, 255, 212, 0.632));
+}
+.btn:active{
+    transform: scale(0.98);
+}
+.btn:focus{
+    outline: none;
+}
+
+.setting{
+    position: absolute;
+    bottom: 4%;
+    left: 3%;
+    cursor: pointer;
+}
+
+.settings{
+    /* display: none; */
+    position: absolute;
+    top:0;
+    padding: 0.9rem 1rem;
+    width: 100%;
+    background-image: linear-gradient(135deg,rgb(74, 38, 110),rgb(161, 106, 161));
+    transform: translateY(-100%);
+    transition: transform 0.4s ease;
+}
+.settings.active{
+    transform: translateY(0%);
+    
+}
+.settings span{
+    padding: 0px 1rem;
+    font-size: 1.1rem;
+}
+
+.play-mode{
+    background-color: rgb(174, 219, 255);
+    text-align: center;
+    font: inherit;
+    font-size:0.9rem;
+    border: none;
+    cursor: pointer;
+    padding: 0.2rem 1rem;
+    border-radius: 2px;
+}
+.play-mode:focus{
+    outline: none;
+}
+.play-mode *{
+    background-color: rgba(174, 219, 255, 0.455);
+    border: none;
+    font-size:0.9rem;
+    border-radius: 10px;
+    text-align: center;
+    transform: translate(-50%);
+}
+
+/* .play-mode option{
+    background-color: rgb(174, 219, 255);
+    
+} */
+
+.time,.score{
+    font-size: 1.1rem;
+    font-weight: bolder;
+    letter-spacing: 1px;
+}
+
+.reload{
+    width: 8rem;
+    height:2.5rem;
+    margin:1rem;
+    margin-top: 2rem;
+}
+
+.after-h1{
+    font-size: 1.2rem;
+    font-weight: 0;
+}
+
+.container .final-score{
+    font-size: 2rem;
+    font-weight: bolder;
+    margin: 2rem 0px;
 }
