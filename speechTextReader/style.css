@@ -20,6 +20,8 @@ body{
     margin: 0;
 }
 
+
+
 /* for flexbox property */
 .container,.items,.item,.caption,.text-box{
     display: flex;
@@ -29,27 +31,42 @@ body{
 
 .container{
     flex-direction: column;
+    width: 100%;
     position: relative;
+    overflow-x: hidden;
 }
 
+.container.active::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    background-color: rgba(49, 49, 49, 0.432);
+}
 
 .text-box{
     /* display: none; */
+    width: clamp(300px,500px,90vw);
     padding: 1rem 1.2rem;
     flex-direction: column;
     transform: translateY(-500%);
-    background-color: rgba(0, 0, 0, 0.857);
+    background-color: rgba(0, 0, 0, 0.698);
+    border-radius: 10px;
     color: white;
     position: absolute;
     z-index: 2;
-    top: 30vh;
-    left: 20%;
+    top: 25vh;
+    /* left: clamp(20vw,40vw,0vw); */
     /* transform: translate(-50%,-50%); */
+
     transition: transform 0.5s ease;
+
 }
 .text-box.active{
     transform: translateY(0%);
-    
+    z-index: 5;
+
 }
 .close{
     align-self: flex-end;
@@ -62,6 +79,7 @@ body{
     font: inherit;
     padding: 0.5rem 0.8rem;
     border-radius: 1rem;
+    width: 90%;
 }
 
 .text-box textarea:focus{
@@ -112,6 +130,13 @@ body{
     margin: 20px;
     position: relative;
     cursor: pointer;
+    transition: box-shadow 0.5s ease;
+
+}
+.item.active{
+    box-shadow: 5px 5px 30px rgba(255, 68, 0, 0.409),
+                -5px -5px 30px rgba(255, 68, 0, 0.518);
+    /* background-color: orange; */
 }
 
 
@@ -140,5 +165,7 @@ body{
     background-image: var(--hoverColor);
     /* color:rgba(3, 3, 3, 0.291); */
     color: rgb(71, 70, 70);
+    font-weight: bolder;
+
 }
 
