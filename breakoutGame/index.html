@@ -12,10 +12,22 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>Breakout Game</title>
   </head>
   <body>
-    <h1>Project Starter</h1>
+    <div class="container">
+      <button class="btn show-rules">Show Rules</button>
+      <div class="rules">
+        <h2>How To Play:</h2>
+        <p>
+          Use your right and left keys to move the paddle to bounce the ball up
+          and break the blocks.
+        </p>
+        <p>If you miss the ball, your score and the blocks will reset.</p>        <button class="btn close">Close</button>        
+      </div>
+      <h1>Breakout!</h1>
+      <canvas width="800" height="600" class="game-box"></canvas>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
