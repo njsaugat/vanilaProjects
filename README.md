@@ -1,5 +1,8 @@
-​    *e*.preventDefault()--> to prevent default
-[https://vanila-projects-deployed.vercel.app/	](https://vanila-projects-deployed.vercel.app/)![img](https://lh6.googleusercontent.com/KZZdJqGb7io4YodRXHs3nY0VWXLyR1sf5svtCoz9J98dpo0sqyqvDtu3wjg8xWR25mVAl4L9nRwlihTzfRXAPuDLkE74tfvGAjU2FNspoVjpS2my8eJRgF6uHPbVCSRL4xPwSYqlrAMHp3RFDBvO5r4ji0ecQH1IXq7owAjDkoFKCAIVe9BYamiF-K3bMw)![img](https://lh3.googleusercontent.com/XVsl1l-50AMCRXkee6ljXjewgF6ijNSZOr60C_xOCFuizIXlqpLh4J9_S7QWAu8it5T9Dd0rSp6KFolfcKSqZ8Rv7tur6adlMGu-3w5EkdwG5igtsjHHMyvpago5SxA0u_dvZ6uGSSMUPa_79UW9E8zkGJZ-2uuuPaoagx4j3RLbga1RvE0gGGT72WLATA)
+
+Project link:
+[https://vanila-projects-deployed.vercel.app/	]
+
+(https://vanila-projects-deployed.vercel.app/)![img](https://lh6.googleusercontent.com/KZZdJqGb7io4YodRXHs3nY0VWXLyR1sf5svtCoz9J98dpo0sqyqvDtu3wjg8xWR25mVAl4L9nRwlihTzfRXAPuDLkE74tfvGAjU2FNspoVjpS2my8eJRgF6uHPbVCSRL4xPwSYqlrAMHp3RFDBvO5r4ji0ecQH1IXq7owAjDkoFKCAIVe9BYamiF-K3bMw)![img](https://lh3.googleusercontent.com/XVsl1l-50AMCRXkee6ljXjewgF6ijNSZOr60C_xOCFuizIXlqpLh4J9_S7QWAu8it5T9Dd0rSp6KFolfcKSqZ8Rv7tur6adlMGu-3w5EkdwG5igtsjHHMyvpago5SxA0u_dvZ6uGSSMUPa_79UW9E8zkGJZ-2uuuPaoagx4j3RLbga1RvE0gGGT72WLATA)
 
 
 
